@@ -1,0 +1,1004 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --blue-dark: #294c69;
+  --blue: #8db9dc;
+  --blue-light: #e8f3fb;
+  --sky: #cfe9f6;
+  --text: #29465f;
+  --muted: #82909c;
+  --border: #e1eaf0;
+  --white: #ffffff;
+}
+
+body {
+  min-height: 100vh;
+  background: #edf1f4;
+  color: var(--text);
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+.app {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow-x: hidden;
+  background: #f8fbfd;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+  height: 390px;
+  overflow: hidden;
+  border-radius: 0 0 32px 32px;
+  background:
+    linear-gradient(
+      180deg,
+      #acd7ee 0%,
+      #d5ebf5 56%,
+      #eef7fb 100%
+    );
+}
+
+/* Soft clouds */
+.cloud {
+  position: absolute;
+  height: 38px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.cloud::before {
+  width: 50px;
+  height: 50px;
+  left: 20px;
+  bottom: 3px;
+}
+
+.cloud::after {
+  width: 65px;
+  height: 65px;
+  left: 58px;
+  bottom: 0;
+}
+
+.cloud-one {
+  width: 150px;
+  top: 90px;
+  left: -45px;
+}
+
+.cloud-two {
+  width: 160px;
+  top: 150px;
+  right: -70px;
+}
+
+.cloud-three {
+  width: 105px;
+  top: 220px;
+  left: 15px;
+}
+
+/* Moon */
+.moon {
+  position: absolute;
+  top: 70px;
+  right: 38px;
+  width: 94px;
+  height: 94px;
+  border-radius: 50%;
+  background: #fff5d4;
+  box-shadow:
+    0 0 0 12px rgba(255,255,255,0.13),
+    0 8px 25px rgba(54, 94, 120, 0.12);
+}
+
+.moon-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: #e7d9aa;
+  opacity: 0.55;
+}
+
+.dot-one {
+  width: 14px;
+  height: 14px;
+  left: 19px;
+  top: 24px;
+}
+
+.dot-two {
+  width: 10px;
+  height: 10px;
+  right: 19px;
+  bottom: 22px;
+}
+
+.dot-three {
+  width: 7px;
+  height: 7px;
+  left: 35px;
+  bottom: 18px;
+}
+
+/* Stars */
+.star {
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.star-one {
+  top: 72px;
+  left: 40%;
+}
+
+.star-two {
+  top: 143px;
+  left: 20%;
+}
+
+.star-three {
+  top: 180px;
+  right: 28%;
+}
+
+.star-four {
+  top: 58px;
+  right: 20%;
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 20px 0;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(36, 87, 130, 0.13);
+  border-radius: 50%;
+  background: #fff;
+  color: #285878;
+  font-size: 14px;
+  font-weight: 950;
+  box-shadow: 0 4px 12px rgba(50, 90, 120, 0.08);
+}
+
+.university-name {
+  color: #244a6c;
+  font-size: 13px;
+  line-height: 1.15;
+  font-weight: 950;
+  letter-spacing: 0.2px;
+}
+
+/* =========================================================
+   HERO COPY
+   ========================================================= */
+
+.hero-copy {
+  position: relative;
+  z-index: 5;
+  margin-top: 42px;
+  padding-left: 22px;
+}
+
+.hero-copy h1 {
+  color: #244d72;
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 950;
+}
+
+.hero-copy p {
+  margin-top: 6px;
+  color: #557997;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   UNIVERSITY ILLUSTRATION
+   Cute campus building, intentionally not a dome/mosque shape.
+   ========================================================= */
+
+.campus {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: 15px;
+  width: 320px;
+  height: 145px;
+  transform: translateX(-50%);
+}
+
+/* Main rectangular campus */
+.main-building {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 238px;
+  height: 90px;
+  transform: translateX(-50%);
+  border-radius: 8px 8px 0 0;
+  background: #fff;
+  box-shadow: 0 12px 20px rgba(57, 94, 119, 0.12);
+}
+
+/* Simple triangular academic-building roof */
+.main-roof {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 270px;
+  height: 42px;
+  transform: translateX(-50%);
+  background: #83afd0;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+/* Center block */
+.center-building {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 0;
+  width: 108px;
+  height: 105px;
+  transform: translateX(-50%);
+  border-radius: 8px 8px 0 0;
+  background: #fff;
+}
+
+/* Center roof */
+.center-roof {
+  position: absolute;
+  top: -29px;
+  left: 50%;
+  width: 128px;
+  height: 39px;
+  transform: translateX(-50%);
+  background: #6f9fc3;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+/* Small flag */
+.flag-pole {
+  position: absolute;
+  z-index: 8;
+  top: 2px;
+  left: 50%;
+  width: 3px;
+  height: 43px;
+  transform: translateX(-50%);
+  background: #5d7d96;
+}
+
+.flag {
+  position: absolute;
+  z-index: 9;
+  top: 2px;
+  left: calc(50% + 2px);
+  width: 27px;
+  height: 15px;
+  background: #78a9ca;
+  clip-path: polygon(0 0, 100% 25%, 72% 50%, 100% 75%, 0 100%);
+}
+
+/* Windows */
+.side-window {
+  position: absolute;
+  top: 34px;
+  width: 27px;
+  height: 32px;
+  border: 4px solid #d8e6ee;
+  border-radius: 5px;
+  background: #a8d8ed;
+}
+
+.window-left {
+  left: 22px;
+}
+
+.window-right {
+  right: 22px;
+}
+
+.center-window {
+  position: absolute;
+  top: 19px;
+  left: 50%;
+  width: 28px;
+  height: 30px;
+  transform: translateX(-50%);
+  border: 4px solid #d8e6ee;
+  border-radius: 50% 50% 5px 5px;
+  background: #9fd4e9;
+}
+
+/* Door */
+.door {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 29px;
+  height: 47px;
+  transform: translateX(-50%);
+  border-radius: 6px 6px 0 0;
+  background: #416d8d;
+}
+
+/* Columns */
+.building-columns {
+  position: absolute;
+  right: 30px;
+  bottom: 0;
+  left: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.building-columns span {
+  width: 13px;
+  height: 56px;
+  border-radius: 4px 4px 0 0;
+  background: #edf5f9;
+}
+
+/* Trees */
+.tree {
+  position: absolute;
+  bottom: 0;
+  width: 45px;
+  height: 85px;
+}
+
+.tree-left {
+  left: 2px;
+}
+
+.tree-right {
+  right: 2px;
+}
+
+.tree-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: #9bc9b1;
+  box-shadow:
+    -14px 12px 0 #a8d2ba,
+    13px 13px 0 #8fc1a5;
+}
+
+.tree-trunk {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 10px;
+  height: 42px;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  background: #b9906d;
+}
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+.profile-card {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: -22px 15px 0;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 9px 25px rgba(48, 78, 98, 0.10);
+}
+
+.avatar {
+  width: 68px;
+  height: 68px;
+  flex: 0 0 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #c9e7f5, #8fb9d7);
+  font-size: 32px;
+}
+
+.profile-info {
+  min-width: 0;
+}
+
+.profile-info h2 {
+  margin-bottom: 5px;
+  color: #294b68;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.profile-info p {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.generation {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 4px 9px;
+  border-radius: 10px;
+  background: var(--blue-light);
+  color: #467093;
+  font-weight: 800;
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.content {
+  padding: 23px 16px 25px;
+}
+
+.section-title {
+  margin-bottom: 10px;
+  color: #29465f;
+  font-size: 19px;
+  font-weight: 950;
+}
+
+/* =========================================================
+   UPCOMING CLASS
+   ========================================================= */
+
+.class-card {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 6px 17px rgba(43, 68, 85, 0.05);
+}
+
+/* Button fills the entire top part */
+.class-main {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 15px 16px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.class-title {
+  display: block;
+  padding-right: 25px;
+  color: #294b69;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.class-date {
+  display: block;
+  margin-top: 5px;
+  padding-right: 22px;
+  overflow: hidden;
+  color: #82909c;
+  font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.arrow {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  color: #6f8494;
+  font-size: 21px;
+  transition: transform 0.2s ease;
+}
+
+.class-card.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* Hidden by default */
+.attendance-row {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 13px;
+  border-top: 1px solid #e7edf1;
+  background: #f8fbfd;
+}
+
+.class-card.open .attendance-row {
+  display: flex;
+}
+
+.attendance-label {
+  flex: 1;
+  color: #668198;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.confirm-button {
+  border: 0;
+  border-radius: 12px;
+  padding: 8px 14px;
+  background: #8db9dc;
+  color: #244764;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.confirm-button.confirmed {
+  background: #a7cbe5;
+  color: #315a76;
+}
+
+/* =========================================================
+   REQUEST ABSENCE
+   ========================================================= */
+
+.absence-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 55px;
+  margin-top: 10px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  background: #fff;
+  color: #294b68;
+  font-size: 14px;
+  font-weight: 850;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(43, 65, 80, 0.04);
+  cursor: pointer;
+}
+
+.absence-arrow {
+  margin-left: auto;
+  color: #81929e;
+  font-size: 21px;
+}
+
+/* =========================================================
+   ASSIGNMENT
+   ========================================================= */
+
+.assignment-section {
+  margin-top: 24px;
+}
+
+.assignment-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(43, 65, 80, 0.04);
+}
+
+.assignment-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  background: var(--blue-light);
+  color: #4b7da2;
+  font-size: 20px;
+}
+
+.assignment-info {
+  flex: 1;
+}
+
+.assignment-info strong {
+  color: #294b68;
+  font-size: 14px;
+}
+
+.assignment-info p {
+  margin-top: 3px;
+  color: #8996a0;
+  font-size: 11px;
+}
+
+.due {
+  color: #7890a2;
+  font-size: 11px;
+  line-height: 1.5;
+  font-weight: 900;
+  text-align: right;
+}
+
+/* =========================================================
+   ATTENDANCE + GRADE
+   ========================================================= */
+
+.stats-section {
+  margin-top: 24px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+}
+
+.stat-card {
+  min-height: 145px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(43, 65, 80, 0.05);
+}
+
+.stat-label {
+  color: #82909c;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.stat-number {
+  margin-top: 4px;
+  color: #315b7e;
+  font-size: 38px;
+  font-weight: 950;
+}
+
+.progress {
+  width: 100%;
+  height: 7px;
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #edf2f5;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  border-radius: 10px;
+  background: #8db9dc;
+}
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.message {
+  min-height: 20px;
+  padding-top: 8px;
+  color: #81919d;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* =========================================================
+   SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 360px) {
+  .hero {
+    height: 365px;
+  }
+
+  .campus {
+    transform: translateX(-50%) scale(0.88);
+    transform-origin: bottom center;
+  }
+
+  .hero-copy h1 {
+    font-size: 25px;
+  }
+
+  .class-date {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   REQUEST ABSENCE BOTTOM SHEET
+   Opens from the arrow on the Request absence row.
+   ========================================================= */
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+  background: rgba(27, 45, 59, 0.38);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .2s ease, visibility .2s ease;
+}
+
+.modal-backdrop.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.absence-sheet {
+  width: min(100%, 430px);
+  max-height: 92vh;
+  overflow-y: auto;
+  border-radius: 30px 30px 0 0;
+  background: #fff;
+  box-shadow: 0 -12px 35px rgba(35, 55, 70, .18);
+  transform: translateY(100%);
+  transition: transform .25s ease;
+}
+
+.modal-backdrop.show .absence-sheet {
+  transform: translateY(0);
+}
+
+.sheet-handle {
+  width: 58px;
+  height: 6px;
+  margin: 14px auto 2px;
+  border-radius: 99px;
+  background: #d5e0e7;
+}
+
+.sheet-content {
+  padding: 25px 22px 28px;
+}
+
+.sheet-content h2 {
+  margin-bottom: 25px;
+  color: #294b68;
+  font-size: 29px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -.7px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 9px;
+  color: #63788a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.reason-label {
+  margin-top: 24px;
+}
+
+.session-select-wrap {
+  position: relative;
+}
+
+.session-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 54px;
+  padding: 0 16px;
+  border: 1px solid #dbe5eb;
+  border-radius: 16px;
+  background: #fff;
+  color: #354d60;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+
+.select-chevron {
+  color: #718696;
+  font-size: 20px;
+  line-height: 1;
+  transition: transform .2s ease;
+}
+
+.session-select[aria-expanded="true"] .select-chevron {
+  transform: rotate(180deg);
+}
+
+.session-select .selected {
+  color: #294b68;
+}
+
+.session-options {
+  display: none;
+  margin-top: 7px;
+  gap: 7px;
+}
+
+.session-options.show {
+  display: grid;
+}
+
+.session-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 50px;
+  padding: 0 15px;
+  border: 1px solid #dfe8ed;
+  border-radius: 15px;
+  background: #fff;
+  color: #3a5061;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+
+.session-option.selected {
+  border-color: #8db9dc;
+  background: #eef7fc;
+}
+
+.radio {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  border: 2px solid #c5d3dc;
+  border-radius: 50%;
+}
+
+.session-option.selected .radio {
+  border: 6px solid #8db9dc;
+}
+
+.reason-input {
+  display: block;
+  width: 100%;
+  min-height: 145px;
+  resize: vertical;
+  padding: 15px 16px;
+  border: 1px solid #dbe5eb;
+  border-radius: 17px;
+  outline: none;
+  background: #fff;
+  color: #354d60;
+  font: 400 15px/1.45 "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.reason-input::placeholder {
+  color: #9aa7b0;
+}
+
+.reason-input:focus,
+.session-select:focus,
+.session-option:focus {
+  border-color: #8db9dc;
+  box-shadow: 0 0 0 3px rgba(141, 185, 220, .18);
+}
+
+.sheet-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 17px;
+}
+
+.submit-absence {
+  min-width: 112px;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 14px;
+  background: #315b7e;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 7px 16px rgba(49, 91, 126, .18);
+}
+
+.form-message {
+  min-height: 18px;
+  margin-top: 10px;
+  color: #708594;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.telegram-avatar {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+}
+
+@media (max-width: 430px) {
+  .modal-backdrop {
+    align-items: flex-end;
+  }
+
+  .absence-sheet {
+    max-height: 90vh;
+  }
+
+  .sheet-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
